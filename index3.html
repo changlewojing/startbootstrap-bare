@@ -8,6 +8,10 @@
 
     <title>Bare - Start Bootstrap Template</title>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -24,12 +28,38 @@
         }
       }
 
+
+  h5 {
+    margin-bottom: 0;
+  }
+
+  hr {
+    margin-top: 2px;
+  }
+
   .example-1 {
-    height: 500px;
+    height: 600px;
     border: 1px solid #ddd;
     border-radius: 4px;
   }
 
+  .example-2, .example-3, .example-4, .example-5, .example-6 {
+    height: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .example-flex {
+    height: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .example-flex-reverse {
+    flex-direction: row-reverse;
+  }
 
   #one, #two {
     padding: 20px;
@@ -39,6 +69,9 @@
     padding: 0;
   }
 
+  .example-4, .example-5 {
+    height: 400px;
+  }
 
   .split p, .split-flex p {
     padding: 20px;
@@ -75,13 +108,19 @@
     float: left;
   }
 
+
+
     </style>
 <script>
 $(document).ready(function(){
   Split(['#one', '#two'], {
     sizes: [25, 75]
-  })
+  });
+  Split(['#eight', '#nine'], {
+    direction: 'vertical'
+  });
 });
+
 </script>
 
   </head>
@@ -134,6 +173,14 @@ $(document).ready(function(){
               <pre><code>Split(&lt;HTMLElement|selector[]&gt; elements, &lt;options&gt; options?)</code></pre>
             </div>
         </div>
+          <div class="example-4">
+            <div id="eight" class="split split-vertical">
+              <p>#eight</p>
+            </div>
+            <div id="nine" class="split split-vertical">
+              <p>#nine</p>
+            </div>
+          </div>
     </div>
     <footer class="py-1 bg-dark fixed-bottom">
       <div class="container">
@@ -146,5 +193,6 @@ $(document).ready(function(){
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   </body>
+<script>hljs.initHighlightingOnLoad();</script>
 
 </html>
